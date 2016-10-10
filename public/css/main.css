@@ -1,0 +1,155 @@
+html,body {
+	height:100%;
+	margin:0;
+	font-family: 'Open Sans', sans-serif;
+}
+.container {
+	height:100%;
+	display:flex;
+	flex-flow:column;
+	background-color:#076895;
+}
+
+
+
+.msgContainer {
+	height:100%;
+	overflow-y:auto;
+}
+.msgContainer .date {
+	font-size:12px;
+	color:gray;
+	margin-top:5px;
+}
+.msgContainer .message {
+	background-color:orange;
+	padding:5px;
+	border-radius:5px;
+	display:inline-block;
+	margin:10px 10px 10px 22px;
+	position:relative;
+	word-break:break-all;
+}
+.msgContainer .message.right {
+	float:right;
+	background-color:cyan;
+	margin:10px 22px 10px 10px;
+}
+.msgContainer .message.left:before {
+	content:'';
+	width: 0; 
+	height: 0; 
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;  
+	border-right:12px solid orange;
+	position:absolute;
+	top:25%;
+	left:-12px;
+}
+.msgContainer .message.right:after {
+	content:'';
+	width: 0; 
+	height: 0; 
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;  
+	border-left:12px solid cyan;
+	position:absolute;
+	top:25%;
+	right:-12px;
+}
+
+
+
+.inputFooter > form > div {
+	display:flex;
+}
+.inputFooter input {
+	box-sizing:border-box;
+}
+.inputFooter #comment {
+	flex:1;
+	background:none;
+	color:white;
+	border:none;
+	padding:10px;
+}
+.inputFooter #addImoji {
+	cursor:pointer;
+	line-height:36px;
+}
+.inputFooter input[type='submit'] {
+	background:none;
+	color:white;
+	border:none;
+	cursor:pointer;
+}
+.inputFooter .imojiPanel.open {
+	position:absolute;
+	z-index:1;
+	background-color:red;
+	width:100%;
+	height:100px;
+	overflow-y:auto;
+	bottom:0;
+}
+
+
+
+
+
+
+
+
+/* --- */
+.stickerBase {
+	position:relative;
+
+}
+.stickerBase .group {
+	position:absolute;
+	display:flex;
+}
+.stickerBase .part {
+
+}
+/* --- */
+.stickerBase .main-body {
+	flex-flow:column;
+}
+.stickerBase .head {
+	border-radius:50%;
+	background-color:cyan;
+	z-index:1;
+}
+.stickerBase .chest {
+	background-color:orange;
+}
+/* --- */
+.stickerBase .left-arm {
+}
+.stickerBase .right-arm {
+}
+.stickerBase .elbow {
+	z-index:2;
+	background-color:red;
+}
+.stickerBase .hand {
+	z-index:3;
+	background-color:green;
+}
+/* --- */
+.stickerBase .left-leg {
+	flex-flow:column;
+}
+.stickerBase .right-leg {
+	flex-flow:column;
+}
+.stickerBase .knee {
+	z-index:2;
+	background-color:yellow;
+}
+.stickerBase .foot {
+	z-index:3;
+	background-color:blue;
+}
+/* --- */
