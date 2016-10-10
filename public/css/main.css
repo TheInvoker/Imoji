@@ -103,7 +103,6 @@ html,body {
 /* --- */
 .stickerBase {
 	position:relative;
-
 }
 .stickerBase .group {
 	position:absolute;
@@ -118,11 +117,10 @@ html,body {
 }
 .stickerBase .head {
 	border-radius:50%;
-	background-color:cyan;
 	z-index:1;
 }
 .stickerBase .chest {
-	background-color:orange;
+
 }
 /* --- */
 .stickerBase .left-arm {
@@ -131,11 +129,9 @@ html,body {
 }
 .stickerBase .elbow {
 	z-index:2;
-	background-color:red;
 }
 .stickerBase .hand {
 	z-index:3;
-	background-color:green;
 }
 /* --- */
 .stickerBase .left-leg {
@@ -146,10 +142,28 @@ html,body {
 }
 .stickerBase .knee {
 	z-index:2;
-	background-color:yellow;
 }
 .stickerBase .foot {
 	z-index:3;
+}
+
+/* -- THEMES  -- */
+.stickerBase.custom1 .head {
+	background-color:cyan;
+}
+.stickerBase.custom1 .chest {
+	background-color:orange;
+}
+.stickerBase.custom1 .elbow {
+	background-color:red;
+}
+.stickerBase.custom1 .hand {
+	background-color:green;
+}
+.stickerBase.custom1 .knee {
+	background-color:yellow;
+}
+.stickerBase.custom1 .foot {
 	background-color:blue;
 }
 /* --- */
