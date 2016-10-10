@@ -117,7 +117,7 @@ html,body {
 .stickerBase .main-body {
 }
 .stickerBase .head {
-	z-index:1;
+
 }
 .stickerBase .chest {
 
@@ -128,10 +128,10 @@ html,body {
 .stickerBase .right-arm {
 }
 .stickerBase .elbow {
-	z-index:2;
+
 }
 .stickerBase .hand {
-	z-index:3;
+
 }
 /* --- */
 .stickerBase .left-leg {
@@ -141,9 +141,9 @@ html,body {
 
 }
 .stickerBase .knee {
-	z-index:2;
+
 }
 .stickerBase .foot {
-	z-index:3;
+
 }
 /* --- */

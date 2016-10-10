@@ -7,28 +7,43 @@ function baseSticker(container, scale, stickerType) {
 			'pins': [
 				{
 					'name':".main-body",
+					'width':50,
+					'height':150,
 					'top':0,
-					'left':100
+					'left':100,
+					'z':1
 				},
 				{
 					'name':".left-arm",
+					'width':100,
+					'height':20,
 					'top':60,
-					'left':0
+					'left':5,//0,
+					'z':2
 				},
 				{
 					'name':".right-arm",
+					'width':100,
+					'height':20,
 					'top':60,
-					'left':150
+					'left':145,//150,
+					'z':0
 				},
 				{
 					'name':".left-leg",
-					'top':150,
-					'left':103
+					'width':20,
+					'height':100,
+					'top':145,//150,
+					'left':103,
+					'z':2
 				},
 				{
 					'name':".right-leg",
-					'top':150,
-					'left':127
+					'width':20,
+					'height':100,
+					'top':145,//150,
+					'left':127,
+					'z':0
 				}
 			],
 			'dimensions' : [
@@ -38,8 +53,9 @@ function baseSticker(container, scale, stickerType) {
 					'height':50,
 					'bgcolor':undefined,
 					'src':'http://www.w3schools.com/cssref/smiley.gif',
-					'top':0,
-					'left':0
+					'top':3,//0,
+					'left':0,
+					'z':3
 				},
 				{
 					'name':".chest",
@@ -48,79 +64,88 @@ function baseSticker(container, scale, stickerType) {
 					'bgcolor':'orange',
 					'src':'',
 					'top':50,
-					'left':0
+					'left':0,
+					'z':2
 				},
 				{
-					'name':".elbow:nth-child(1)",
+					'name':".left-arm .elbow",
 					'width':50,
 					'height':20,
 					'bgcolor':'red',
 					'src':'',
 					'top':0,
-					'left':0
+					'left':50,
+					'z':3
 				},
 				{
-					'name':".elbow:nth-child(2)",
+					'name':".right-arm .elbow",
 					'width':50,
 					'height':20,
 					'bgcolor':'navy',
 					'src':'',
 					'top':0,
-					'left':50
+					'left':0,
+					'z':1
 				},
 				{
-					'name':".hand:nth-child(1)",
+					'name':".left-arm .hand",
 					'width':50,
 					'height':20,
 					'bgcolor':'green',
 					'src':'',
 					'top':0,
-					'left':0
+					'left':3,//0,
+					'z':4
 				},
 				{
-					'name':".hand:nth-child(2)",
+					'name':".right-arm .hand",
 					'width':50,
 					'height':20,
 					'bgcolor':'olive',
 					'src':'',
 					'top':0,
-					'left':50
+					'left':47,//50,
+					'z':0
 				},
 				{
-					'name':".knee:nth-child(1)",
+					'name':".left-leg .knee",
 					'width':20,
 					'height':50,
 					'bgcolor':'yellow',
 					'src':'',
 					'top':0,
-					'left':0
+					'left':0,
+					'z':3
 				},
 				{
-					'name':".knee:nth-child(2)",
+					'name':".right-leg .knee",
 					'width':20,
 					'height':50,
 					'bgcolor':'magenta',
 					'src':'',
 					'top':0,
-					'left':0
+					'left':0,
+					'z':1
 				},
 				{
-					'name':".foot:nth-child(1)",
+					'name':".left-leg .foot",
 					'width':20,
 					'height':50,
 					'bgcolor':'blue',
 					'src':'',
-					'top':50,
-					'left':0
+					'top':47,//50,
+					'left':0,
+					'z':4
 				},
 				{
-					'name':".foot:nth-child(2)",
+					'name':".right-leg .foot",
 					'width':20,
 					'height':50,
 					'bgcolor':'blue',
 					'src':'',
-					'top':50,
-					'left':0
+					'top':47,//50,
+					'left':0,
+					'z':0
 				}
 			]
 		};
@@ -186,14 +211,18 @@ function baseSticker(container, scale, stickerType) {
 			'background-image':"url('" + part.src + "')",
 			'background-size':'100% 100%',
 			'top':scale*part.top,
-			'left':scale*part.left
+			'left':scale*part.left,
+			'z-index':part.z
 		});
 	}
 	for(var i=0;i<pinsArr.length; i+=1) {
 		var pin = pinsArr[i];
 		stickerBase.find(pin.name).css({
+			'width':scale*pin.width,
+			'height':scale*pin.height,
 			'top':scale*pin.top,
-			'left':scale*pin.left
+			'left':scale*pin.left,
+			'z-index':pin.z
 		});
 	}
 	
