@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	var waveAnimation = animationSticker.getWaveAnimation();
-	var sticker = new baseSticker(".msgContainer", 1, "custom1");
+	var sticker = new baseSticker(".msgContainer", 0.5);
 	sticker.setAnimation(waveAnimation);
 	
 	setUpForm();

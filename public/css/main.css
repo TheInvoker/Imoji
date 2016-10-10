@@ -146,24 +146,4 @@ html,body {
 .stickerBase .foot {
 	z-index:3;
 }
-
-/* -- THEMES  -- */
-.stickerBase.custom1 .head {
-	background-color:cyan;
-}
-.stickerBase.custom1 .chest {
-	background-color:orange;
-}
-.stickerBase.custom1 .elbow {
-	background-color:red;
-}
-.stickerBase.custom1 .hand {
-	background-color:green;
-}
-.stickerBase.custom1 .knee {
-	background-color:yellow;
-}
-.stickerBase.custom1 .foot {
-	background-color:blue;
-}
 /* --- */
