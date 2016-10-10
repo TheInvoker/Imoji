@@ -1,85 +1,126 @@
-function baseSticker(container, scale) {
+function baseSticker(container, scale, stickerType) {
 
 	function simpleSticker() {
 		return {
 			'width' : 250,
 			'height' : 250,
+			'pins': [
+				{
+					'name':".main-body",
+					'top':0,
+					'left':100
+				},
+				{
+					'name':".left-arm",
+					'top':60,
+					'left':0
+				},
+				{
+					'name':".right-arm",
+					'top':60,
+					'left':150
+				},
+				{
+					'name':".left-leg",
+					'top':150,
+					'left':103
+				},
+				{
+					'name':".right-leg",
+					'top':150,
+					'left':127
+				}
+			],
 			'dimensions' : [
 				{
 					'name':".head",
 					'width':50,
 					'height':50,
-					'bgcolor':'cyan',
-					'src':''
+					'bgcolor':undefined,
+					'src':'http://www.w3schools.com/cssref/smiley.gif',
+					'top':0,
+					'left':0
 				},
 				{
 					'name':".chest",
 					'width':50,
 					'height':100,
 					'bgcolor':'orange',
-					'src':''
+					'src':'',
+					'top':50,
+					'left':0
 				},
 				{
 					'name':".elbow:nth-child(1)",
 					'width':50,
 					'height':20,
 					'bgcolor':'red',
-					'src':''
+					'src':'',
+					'top':0,
+					'left':0
 				},
 				{
 					'name':".elbow:nth-child(2)",
 					'width':50,
 					'height':20,
 					'bgcolor':'navy',
-					'src':''
+					'src':'',
+					'top':0,
+					'left':50
 				},
 				{
-					'name':".hand",
+					'name':".hand:nth-child(1)",
 					'width':50,
 					'height':20,
 					'bgcolor':'green',
-					'src':''
+					'src':'',
+					'top':0,
+					'left':0
 				},
 				{
-					'name':".knee",
+					'name':".hand:nth-child(2)",
+					'width':50,
+					'height':20,
+					'bgcolor':'olive',
+					'src':'',
+					'top':0,
+					'left':50
+				},
+				{
+					'name':".knee:nth-child(1)",
 					'width':20,
 					'height':50,
 					'bgcolor':'yellow',
-					'src':''
+					'src':'',
+					'top':0,
+					'left':0
 				},
 				{
-					'name':".foot",
+					'name':".knee:nth-child(2)",
+					'width':20,
+					'height':50,
+					'bgcolor':'magenta',
+					'src':'',
+					'top':0,
+					'left':0
+				},
+				{
+					'name':".foot:nth-child(1)",
 					'width':20,
 					'height':50,
 					'bgcolor':'blue',
-					'src':''
-				}
-			],
-			'pins':[
-				{
-					'name':".main-body",
-					'left':100,
-					'top':0
+					'src':'',
+					'top':50,
+					'left':0
 				},
 				{
-					'name':".left-arm",
-					'left':0,
-					'top':60
-				},
-				{
-					'name':".right-arm",
-					'left':150,
-					'top':60
-				},
-				{
-					'name':".left-leg",
-					'left':103,
-					'top':150
-				},
-				{
-					'name':".right-leg",
-					'left':127,
-					'top':150
+					'name':".foot:nth-child(2)",
+					'width':20,
+					'height':50,
+					'bgcolor':'blue',
+					'src':'',
+					'top':50,
+					'left':0
 				}
 			]
 		};
@@ -88,30 +129,47 @@ function baseSticker(container, scale) {
 	var stickerBaseHtml = 
 	'<div class="stickerBase">' +
 		'<div class="main-body group">' +
-			'<div class="head part"/>' +
-			'<div class="chest part"/>' +
+			'<div>' +
+				'<div class="head part"/>' +
+				'<div class="chest part"/>' +
+			'</div>' +
 		'</div>' +
 		'<div class="left-arm group">' +
-			'<div class="left hand part"/>' +
-			'<div class="left elbow part"/>' +
+			'<div>' +
+				'<div class="left hand part"/>' +
+				'<div class="left elbow part"/>' +
+			'</div>' +	
 		'</div>' +
 		'<div class="right-arm group">' +
-			'<div class="right elbow part"/>' +
-			'<div class="right hand part"/>' +
+			'<div>' +
+				'<div class="right elbow part"/>' +
+				'<div class="right hand part"/>' +
+			'</div>' +
 		'</div>' +
 		'<div class="left-leg group">' +
-			'<div class="left knee part"/>' +
-			'<div class="left foot part"/>' +
+			'<div>' +
+				'<div class="left knee part"/>' +
+				'<div class="left foot part"/>' +
+			'</div>' +
 		'</div>' +
 		'<div class="right-leg group">' +
-			'<div class="right knee part"/>' +
-			'<div class="right foot part"/>' +
+			'<div>' +
+				'<div class="right knee part"/>' +
+				'<div class="right foot part"/>' +
+			'</div>' +
 		'</div>' +
 	'</div>';
 	
 	var stickerBase = $(stickerBaseHtml);
 	
-	var simple = simpleSticker();
+	var simple;
+	if (stickerType == 'simple') {
+		simple = simpleSticker();
+	} else {
+		alert("Invalid sticker type!");
+		return;
+	}
+	
 	var partsArr = simple.dimensions;
 	var pinsArr = simple.pins;
 	
@@ -125,14 +183,17 @@ function baseSticker(container, scale) {
 			'width':scale*part.width,
 			'height':scale*part.height,
 			'background-color':part.bgcolor,
-			'background-image':"url('" + part.src + "')"
+			'background-image':"url('" + part.src + "')",
+			'background-size':'100% 100%',
+			'top':scale*part.top,
+			'left':scale*part.left
 		});
 	}
 	for(var i=0;i<pinsArr.length; i+=1) {
 		var pin = pinsArr[i];
 		stickerBase.find(pin.name).css({
-			'left':scale*pin.left,
-			'top':scale*pin.top
+			'top':scale*pin.top,
+			'left':scale*pin.left
 		});
 	}
 	

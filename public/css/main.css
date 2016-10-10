@@ -106,17 +106,17 @@ html,body {
 }
 .stickerBase .group {
 	position:absolute;
-	display:flex;
+}
+.stickerBase .group > div {
+	position:relative;
 }
 .stickerBase .part {
-
+	position:absolute;
 }
 /* --- */
 .stickerBase .main-body {
-	flex-flow:column;
 }
 .stickerBase .head {
-	border-radius:50%;
 	z-index:1;
 }
 .stickerBase .chest {
@@ -135,10 +135,10 @@ html,body {
 }
 /* --- */
 .stickerBase .left-leg {
-	flex-flow:column;
+
 }
 .stickerBase .right-leg {
-	flex-flow:column;
+
 }
 .stickerBase .knee {
 	z-index:2;
