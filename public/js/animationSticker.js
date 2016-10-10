@@ -4,6 +4,18 @@ var animationSticker = new function() {
 		var dur = 0.3;
 		return [
 			{
+				'context':".left-arm",
+				'repeat':0,
+				'timeline':[
+					{
+						'duration':0,
+						'rotation':-90,
+						'transformOrigin':"100% 50%",
+						'ease': Power0.easeNone
+					}
+				]
+			},
+			{
 				'context':".right-arm",
 				'repeat':1,
 				'timeline':[
