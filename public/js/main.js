@@ -1,7 +1,19 @@
 $(document).ready(function() {
-	var waveAnimation = animationSticker.getWaveAnimation();
-	var sticker = new baseSticker(".msgContainer", 1, 'simple');
+	
+	var stickerBase = humanSkeletonStickers.getBaseSkeleton();
+	var skeletonPins = humanSkeletonStickers.getBaseSkeletonPins();
+	var simpleBody = humanSkeletonStickers.getSimpleSticker();
+	var waveAnimation = humanAnimationSticker.getWaveAnimation();
+	
+	var sticker = new makeSticker(stickerBase, skeletonPins, simpleBody, 1);
+	
+	$(".msgContainer").append(stickerBase);
 	sticker.setAnimation(waveAnimation);
+	
+	$(".closepanel").click(function() {
+		$(".inputFooter .imojiPanelContainer").removeClass("open");
+		return false;
+	});
 	
 	setUpForm();
 });
@@ -19,7 +31,7 @@ function setUpForm() {
 		return false;
 	});
 	addImojiButton.click(function() {
-		$(".inputFooter .imojiPanel").addClass("open");
+		$(".inputFooter .imojiPanelContainer").addClass("open");
 		return false;
 	});
 	comment.focus();

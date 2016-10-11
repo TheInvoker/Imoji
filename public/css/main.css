@@ -3,6 +3,9 @@ html,body {
 	margin:0;
 	font-family: 'Open Sans', sans-serif;
 }
+input {
+	font-family: 'Open Sans', sans-serif;
+}
 .container {
 	height:100%;
 	display:flex;
@@ -83,16 +86,29 @@ html,body {
 	border:none;
 	cursor:pointer;
 }
-.inputFooter .imojiPanel.open {
+.inputFooter .imojiPanelContainer {
+	display:none;
+}
+.inputFooter .imojiPanelContainer.open {
 	position:absolute;
 	z-index:1;
 	background-color:red;
 	width:100%;
+	bottom:0;
+	display:block;
+}
+.inputFooter .closepanel {
+	float:right;
+	cursor:pointer;
+	color:white;
+	font-weight:bold;
+	padding:5px;
+}
+.inputFooter .imojiPanel {
+	width:100%;
 	height:100px;
 	overflow-y:auto;
-	bottom:0;
 }
-
 
 
 
@@ -112,38 +128,5 @@ html,body {
 }
 .stickerBase .part {
 	position:absolute;
-}
-/* --- */
-.stickerBase .main-body {
-}
-.stickerBase .head {
-
-}
-.stickerBase .chest {
-
-}
-/* --- */
-.stickerBase .left-arm {
-}
-.stickerBase .right-arm {
-}
-.stickerBase .elbow {
-
-}
-.stickerBase .hand {
-
-}
-/* --- */
-.stickerBase .left-leg {
-
-}
-.stickerBase .right-leg {
-
-}
-.stickerBase .knee {
-
-}
-.stickerBase .foot {
-
 }
 /* --- */

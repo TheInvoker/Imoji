@@ -1,4 +1,4 @@
-var animationSticker = new function() {
+var humanAnimationSticker = new function() {
 	
 	this.getWaveAnimation = function() {
 		var dur = 0.3;
