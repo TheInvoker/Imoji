@@ -88,6 +88,7 @@ input {
 }
 .inputFooter .imojiPanelContainer {
 	display:none;
+	position:relative;
 }
 .inputFooter .imojiPanelContainer.open {
 	position:absolute;
@@ -98,7 +99,9 @@ input {
 	display:block;
 }
 .inputFooter .closepanel {
-	float:right;
+	position:absolute;
+	right:0;
+	top:0;
 	cursor:pointer;
 	color:white;
 	font-weight:bold;
@@ -109,8 +112,22 @@ input {
 	height:100px;
 	overflow-y:auto;
 }
-
-
+.inputFooter .imojiPanelSkeleton {
+	display:none;
+}
+.inputFooter .imojiPanelSkeleton.open {
+	display:block;
+}
+.inputFooter .imojiPanelAction {
+	display:none;
+}
+.inputFooter .imojiPanelAction.open {
+	display:block;
+}
+.inputFooter .imojiPanelSkeleton > div, .inputFooter .imojiPanelAction > div {
+	margin:10px;
+	cursor:pointer;
+}
 
 
 
